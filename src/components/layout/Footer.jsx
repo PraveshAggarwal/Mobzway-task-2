@@ -1,130 +1,100 @@
-import { SiFacebook, SiYoutube, SiTelegram } from "react-icons/si";
+import colomboStrikers from '../../assets/colombo_strikers.png';
+import dambullaAurea from '../../assets/dambulla_aurea.png';
+import grandCaymanJaguars from '../../assets/grand_cayman_jaguars.png';
+import montrealTigers from '../../assets/montreal_tigers.png';
+import northernWarriors from '../../assets/northern_warriors.png';
+import sudurpaschimRoyals from '../../assets/sudurpaschim_royals.png';
+import teluguWarriors from '../../assets/telugu_warriors.png';
+import vegasVikings from '../../assets/vegas_vikings.png';
+import samiraMahiKhan from '../../assets/samira_mahi_khan.png';
 
 export default function Footer() {
-  const paymentMethods = [
-    {
-      name: "Paytm",
-      icon: "https://upload.wikimedia.org/wikipedia/commons/2/24/Paytm_Logo_%28standalone%29.svg",
-    },
-    {
-      name: "PhonePe",
-      icon: "https://upload.wikimedia.org/wikipedia/commons/0/04/PhonePe_Logo.svg",
-    },
-    { name: "UPI", text: "UPI" },
-    { name: "Bank Deposit", text: "Bank" },
+  const ambassadors = [
+    { name: "Samira Mahi Khan", year: "2024/2025", logo: samiraMahiKhan },
+    { name: "Shakib Al Hasan", year: "2023/2024", logo: samiraMahiKhan },
+  ];
+
+  const sponsors = [
+    { name: "Vegas Vikings", year: "2025/2026", logo: vegasVikings },
+    { name: "Sudurpaschim Royals", year: "2024/2025", logo: sudurpaschimRoyals },
+    { name: "Telugu Warriors", year: "2024/2025", logo: teluguWarriors },
+    { name: "Colombo Strikers", year: "2024/2025", logo: colomboStrikers },
+    { name: "Grand Cayman Jaguars", year: "2024/2025", logo: grandCaymanJaguars },
+    { name: "Montreal Tigers", year: "2023/2024", logo: montrealTigers },
+    { name: "Dambulla Aurea", year: "2023/2024", logo: dambullaAurea },
+    { name: "Northern Warriors", year: "2023/2024", logo: northernWarriors },
   ];
 
   return (
-    <footer className="bg-(--color-background) border-t border-(--color-border) mt-20">
-      <div className="container-custom py-12">
-        {/* Payment Methods */}
-        <div className="mb-8">
-          <h3 className="text-(--color-text-secondary) text-sm font-semibold mb-4">
-            Payment Method
+    <footer className="mt-20 bg-[#3b3b3b] text-white font-[inherit]">
+      <div className="mx-auto w-[min(1180px,92%)] py-10">
+        <div className="h-px w-full bg-white/20" />
+
+        {/* Brand Ambassadors */}
+        <section className="py-10">
+          <h3 className="mb-8 text-[18px] font-bold text-[#f2b300]">
+            Brand Ambassadors
           </h3>
-          <div className="flex flex-wrap gap-4">
-            {paymentMethods.map((method) => (
-              <div
-                key={method.name}
-                className="bg-(--color-card) px-4 py-2 rounded-sm flex items-center justify-center min-w-20"
-              >
-                {method.icon ? (
-                  <img
-                    src={method.icon}
-                    alt={method.name}
-                    className="h-6 w-auto"
-                    style={{ filter: "brightness(0) invert(1)" }}
-                  />
-                ) : (
-                  <span className="text-(--color-text) text-sm font-medium">
-                    {method.text}
-                  </span>
-                )}
+
+          <div className="flex flex-wrap items-center gap-x-24 gap-y-10">
+            {ambassadors.map((a) => (
+              <div key={a.name} className="flex items-center gap-4">
+                <div className="h-10 w-16 overflow-hidden flex items-center justify-center">
+                  <img src={a.logo} alt={a.name} className="h-full w-full object-contain" loading="lazy" />
+                </div>
+                <div>
+                  <div className="text-[16px] font-bold leading-tight">
+                    {a.name}
+                  </div>
+                  <div className="text-[13px] font-bold text-white/90">
+                    {a.year}
+                  </div>
+                </div>
               </div>
             ))}
           </div>
-        </div>
+        </section>
 
-        {/* Responsible Gaming */}
-        <div className="mb-8">
-          <h3 className="text-(--color-text-secondary) text-sm font-semibold mb-4">
-            RESPONSIBLE GAMING
+        <div className="h-px w-full bg-white/20" />
+
+        {/* Sponsorships */}
+        <section className="py-10">
+          <h3 className="mb-8 text-[18px] font-bold text-[#f2b300]">
+            Sponsorships
           </h3>
-          <div className="flex gap-4">
-            <div className="bg-(--color-card) px-6 py-3 rounded-sm flex items-center justify-center">
-              <span className="text-(--color-primary) text-2xl font-bold">
-                18+
-              </span>
-            </div>
-            <div className="bg-(--color-card) px-6 py-3 rounded-sm flex items-center justify-center">
-              <span className="text-(--color-text) text-sm font-medium">
-                GamCare
-              </span>
-            </div>
-          </div>
-        </div>
 
-        {/* Brand Info */}
-        <div className="mb-8">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="text-3xl font-bold">
-              <span className="text-(--color-primary)">BABU</span>
-              <span className="text-(--color-text)">88</span>
-            </div>
-            <span className="text-(--color-text-secondary) text-sm">
-              Official
-            </span>
-          </div>
-          <p className="text-(--color-primary) text-lg font-semibold mb-2">
-            Bangladesh's No.1 - The Biggest and Most Trusted
-          </p>
-          <p className="text-(--color-text-secondary) text-sm">
-            Copyright © 2026 Babu88. All rights are reserved.
-          </p>
-        </div>
+          <div className="flex flex-wrap items-center gap-x-16 gap-y-10">
+            {sponsors.map((s) => (
+              <div key={s.name} className="flex min-w-67.5 items-center gap-4">
+                <div className="h-12 w-12 overflow-hidden flex items-center justify-center">
+                  <img src={s.logo} alt={s.name} className="h-full w-full object-contain" loading="lazy" />
+                </div>
 
-        {/* Social Links */}
-        <div className="mb-8">
-          <h3 className="text-(--color-text-secondary) text-sm font-semibold mb-4">
-            Follow Us
+                <div>
+                  <div className="text-[16px] font-bold leading-tight">
+                    {s.name}
+                  </div>
+                  <div className="text-[13px] font-bold text-white/90">
+                    {s.year}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ...keep the rest of your footer exactly same... */}
+
+        <div className="h-px w-full bg-white/20" />
+      </div>
+
+      {/* About section (unchanged) */}
+      <div className="bg-black">
+        <div className="mx-auto w-[min(1180px,92%)] py-10">
+          <h3 className="text-yellow-500 text-xl font-bold mb-4">
+            India&apos;s Trusted Online Casino and Cricket Exchange
           </h3>
-          <div className="flex gap-4">
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-(--color-card) p-3 rounded-sm hover:bg-(--color-primary) hover:text-black transition-all duration-200"
-              aria-label="Facebook"
-            >
-              <SiFacebook style={{ width: "24px", height: "24px" }} />
-            </a>
-            <a
-              href="https://youtube.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-(--color-card) p-3 rounded-sm hover:bg-(--color-primary) hover:text-black transition-all duration-200"
-              aria-label="YouTube"
-            >
-              <SiYoutube style={{ width: "24px", height: "24px" }} />
-            </a>
-            <a
-              href="https://telegram.org"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-(--color-card) p-3 rounded-sm hover:bg-(--color-primary) hover:text-black transition-all duration-200"
-              aria-label="Telegram"
-            >
-              <SiTelegram style={{ width: "24px", height: "24px" }} />
-            </a>
-          </div>
-        </div>
-
-        {/* About Section */}
-        <div className="border-t border-(--color-border) pt-8">
-          <h3 className="text-(--color-text) text-xl font-bold mb-4">
-            India's Trusted Online Casino and Cricket Exchange
-          </h3>
-          <p className="text-(--color-text-secondary) text-sm leading-relaxed">
+          <p className="text-white text-sm leading-relaxed">
             Babu88 is the premier online casino in India, offering a variety of
             games for mobile and desktop users. Players can enjoy roulette,
             poker, baccarat, blackjack, and even cricket exchange betting
@@ -135,6 +105,13 @@ export default function Footer() {
             24/7. Join Babu88 today for the best online casino gaming and
             cricket exchange betting experience in India.
           </p>
+
+          <a
+            href="#"
+            className="mt-6 inline-block text-blue-500 hover:underline"
+          >
+            Read More
+          </a>
         </div>
       </div>
     </footer>

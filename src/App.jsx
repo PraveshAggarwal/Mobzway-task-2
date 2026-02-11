@@ -5,7 +5,6 @@ import HotGames from './components/sections/HotGames';
 import ReferralBanner from './components/sections/ReferralBanner';
 import Ambassadors from './components/sections/Ambassadors';
 import Sponsorships from './components/sections/Sponsorships';
-import LiveChat from './components/LiveChat';
 
 function App() {
   return (
@@ -19,7 +18,6 @@ function App() {
         <Sponsorships />
       </main>
       <Footer />
-      <LiveChat />
     </div>
   );
 }

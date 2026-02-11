@@ -6,13 +6,13 @@
   /* Colors */
   --color-primary: #FFD700;
   --color-primary-light: #EEDC82;
-  --color-background: #111111;
-  --color-background-secondary: #1a1a1a;
-  --color-card: #2a2a2a;
-  --color-text: #F2F3F4;
-  --color-text-secondary: #9CA3AF;
+  --color-background: #ffffff;
+  --color-background-secondary: #f8f9fa;
+  --color-card: #ffffff;
+  --color-text: #000000;
+  --color-text-secondary: #6c757d;
   --color-accent: #660000;
-  --color-border: #333333;
+  --color-border: #e0e0e0;
   
   /* Typography */
   --font-heading: 'Oswald', sans-serif;
@@ -32,7 +32,7 @@
   
   body {
     font-family: var(--font-body);
-    background-color: var(--color-background);
+    background-color: #ffffff;
     color: var(--color-text);
     line-height: 1.6;
     overflow-x: hidden;
