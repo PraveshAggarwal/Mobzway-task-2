@@ -1,12 +1,17 @@
-import colomboStrikers from '../../assets/colombo_strikers.png';
-import dambullaAurea from '../../assets/dambulla_aurea.png';
-import grandCaymanJaguars from '../../assets/grand_cayman_jaguars.png';
-import montrealTigers from '../../assets/montreal_tigers.png';
-import northernWarriors from '../../assets/northern_warriors.png';
-import sudurpaschimRoyals from '../../assets/sudurpaschim_royals.png';
-import teluguWarriors from '../../assets/telugu_warriors.png';
-import vegasVikings from '../../assets/vegas_vikings.png';
-import samiraMahiKhan from '../../assets/samira_mahi_khan.png';
+import colomboStrikers from "../../assets/colombo_strikers.png";
+import dambullaAurea from "../../assets/dambulla_aurea.png";
+import grandCaymanJaguars from "../../assets/grand_cayman_jaguars.png";
+import montrealTigers from "../../assets/montreal_tigers.png";
+import northernWarriors from "../../assets/northern_warriors.png";
+import sudurpaschimRoyals from "../../assets/sudurpaschim_royals.png";
+import teluguWarriors from "../../assets/telugu_warriors.png";
+import vegasVikings from "../../assets/vegas_vikings.png";
+import samiraMahiKhan from "../../assets/samira_mahi_khan.png";
+import age18Plus from "../../assets/btm-18+.svg";
+import gamcare from "../../assets/btm-gamcare.svg";
+import youtube from "../../assets/btm-yt.svg";
+import facebook from "../../assets/hover_btm-fb.svg";
+import telegram from "../../assets/hover_btm-tlg.svg";
 
 export default function Footer() {
   const ambassadors = [
@@ -16,10 +21,18 @@ export default function Footer() {
 
   const sponsors = [
     { name: "Vegas Vikings", year: "2025/2026", logo: vegasVikings },
-    { name: "Sudurpaschim Royals", year: "2024/2025", logo: sudurpaschimRoyals },
+    {
+      name: "Sudurpaschim Royals",
+      year: "2024/2025",
+      logo: sudurpaschimRoyals,
+    },
     { name: "Telugu Warriors", year: "2024/2025", logo: teluguWarriors },
     { name: "Colombo Strikers", year: "2024/2025", logo: colomboStrikers },
-    { name: "Grand Cayman Jaguars", year: "2024/2025", logo: grandCaymanJaguars },
+    {
+      name: "Grand Cayman Jaguars",
+      year: "2024/2025",
+      logo: grandCaymanJaguars,
+    },
     { name: "Montreal Tigers", year: "2023/2024", logo: montrealTigers },
     { name: "Dambulla Aurea", year: "2023/2024", logo: dambullaAurea },
     { name: "Northern Warriors", year: "2023/2024", logo: northernWarriors },
@@ -30,17 +43,20 @@ export default function Footer() {
       <div className="mx-auto w-[min(1180px,92%)] py-10">
         <div className="h-px w-full bg-white/20" />
 
-        {/* Brand Ambassadors */}
         <section className="py-10">
           <h3 className="mb-8 text-[18px] font-bold text-[#f2b300]">
             Brand Ambassadors
           </h3>
-
           <div className="flex flex-wrap items-center gap-x-24 gap-y-10">
             {ambassadors.map((a) => (
               <div key={a.name} className="flex items-center gap-4">
                 <div className="h-10 w-16 overflow-hidden flex items-center justify-center">
-                  <img src={a.logo} alt={a.name} className="h-full w-full object-contain" loading="lazy" />
+                  <img
+                    src={a.logo}
+                    alt={a.name}
+                    className="h-full w-full object-contain"
+                    loading="lazy"
+                  />
                 </div>
                 <div>
                   <div className="text-[16px] font-bold leading-tight">
@@ -57,19 +73,21 @@ export default function Footer() {
 
         <div className="h-px w-full bg-white/20" />
 
-        {/* Sponsorships */}
         <section className="py-10">
           <h3 className="mb-8 text-[18px] font-bold text-[#f2b300]">
             Sponsorships
           </h3>
-
           <div className="flex flex-wrap items-center gap-x-16 gap-y-10">
             {sponsors.map((s) => (
               <div key={s.name} className="flex min-w-67.5 items-center gap-4">
                 <div className="h-12 w-12 overflow-hidden flex items-center justify-center">
-                  <img src={s.logo} alt={s.name} className="h-full w-full object-contain" loading="lazy" />
+                  <img
+                    src={s.logo}
+                    alt={s.name}
+                    className="h-full w-full object-contain"
+                    loading="lazy"
+                  />
                 </div>
-
                 <div>
                   <div className="text-[16px] font-bold leading-tight">
                     {s.name}
@@ -83,12 +101,112 @@ export default function Footer() {
           </div>
         </section>
 
-        {/* ...keep the rest of your footer exactly same... */}
+        <div className="h-px w-full bg-white/20" />
+
+        <section className="py-10">
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-start">
+            <div>
+              <h3 className="mb-8 text-[18px] font-bold text-[#f2b300]">
+                Payment Method
+              </h3>
+              <div className="flex flex-wrap items-center gap-10 text-white/45">
+                <div className="text-[34px] font-extrabold leading-none tracking-tight">
+                  tm
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-white/20 text-[12px] font-bold">
+                    ₹
+                  </span>
+                  <span className="text-[14px] font-semibold">PhonePe</span>
+                </div>
+                <div className="text-[34px] font-extrabold italic leading-none tracking-tight">
+                  UPI
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="text-[28px] leading-none">🏦</div>
+                  <div className="text-[12px] font-extrabold leading-[1.05]">
+                    BANK
+                    <br />
+                    DEPOSIT
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="lg:text-center">
+              <h3 className="mb-8 text-[18px] font-bold uppercase text-[#f2b300]">
+                RESPONSIBLE GAMING
+              </h3>
+              <div className="flex flex-wrap items-center gap-4 lg:justify-center">
+                <img
+                  src={age18Plus}
+                  alt="18+"
+                  className="h-15 w-15 object-contain"
+                />
+                <img
+                  src={gamcare}
+                  alt="GamCare"
+                  className="h-15 w-auto object-contain"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div className="h-px w-full bg-white/20" />
+
+        <section className="py-10">
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
+            <div>
+              <div className="flex items-end gap-3">
+                <div className="text-[54px] font-extrabold leading-none tracking-tight italic">
+                  <span className="text-white">BABU</span>
+                  <span className="text-[#f2b300]">88</span>
+                </div>
+                <div className="pb-2 text-[24px] font-semibold italic text-white/85">
+                  Official
+                </div>
+              </div>
+              <div className="mt-4 text-[#f2b300] text-[18px] font-extrabold">
+                Bangladesh&apos;s No.1 - The Biggest and Most Trusted
+              </div>
+              <div className="mt-2 text-[16px] font-bold text-white">
+                Copyright © 2026 Babu88.All rights are reserved.
+              </div>
+            </div>
+            <div className="lg:text-center">
+              <h3 className="mb-8 text-[18px] font-bold text-[#f2b300]">
+                Follow Us
+              </h3>
+              <div className="flex gap-2 lg:justify-center">
+                <a href="#" aria-label="Facebook" className="h-12 w-12">
+                  <img
+                    src={facebook}
+                    alt="Facebook"
+                    className="h-full w-full object-contain"
+                  />
+                </a>
+                <a href="#" aria-label="YouTube" className="h-12 w-12">
+                  <img
+                    src={youtube}
+                    alt="YouTube"
+                    className="h-full w-full object-contain"
+                  />
+                </a>
+                <a href="#" aria-label="Telegram" className="h-12 w-12">
+                  <img
+                    src={telegram}
+                    alt="Telegram"
+                    className="h-full w-full object-contain"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <div className="h-px w-full bg-white/20" />
       </div>
 
-      {/* About section (unchanged) */}
       <div className="bg-black">
         <div className="mx-auto w-[min(1180px,92%)] py-10">
           <h3 className="text-yellow-500 text-xl font-bold mb-4">
@@ -105,7 +223,6 @@ export default function Footer() {
             24/7. Join Babu88 today for the best online casino gaming and
             cricket exchange betting experience in India.
           </p>
-
           <a
             href="#"
             className="mt-6 inline-block text-blue-500 hover:underline"
