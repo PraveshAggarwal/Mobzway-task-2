@@ -1,23 +1,23 @@
 import { AnimatePresence, motion } from "framer-motion";
 
-import babu88 from "../../assets/babu88_logo_black.svg";
-import hotBadge from "../../assets/hot-badge.png";
-import iconPromotion from "../../assets/icon_promotion.svg";
-import iconReferral from "../../assets/icon_referral.svg";
-import iconBettingPass from "../../assets/icon_bettingpass.svg";
-import iconAgents from "../../assets/icon_agents.svg";
-import iconRng from "../../assets/icon_rng.svg";
-import iconLd from "../../assets/icon_ld.svg";
-import iconCrash from "../../assets/icon_crash.svg";
-import iconCricket from "../../assets/icon_cricket.svg";
-import iconTable from "../../assets/icon_table.svg";
-import iconFastGames from "../../assets/icon_fastgames.svg";
-import iconFishing from "../../assets/icon_fishing.svg";
-import iconSb from "../../assets/icon_sb.svg";
-import iconLanguage from "../../assets/icon_language.svg";
-import iconFaq from "../../assets/icon_FAQ.svg";
-import iconLiveChat from "../../assets/liveChat.svg";
-import iconDownloadApp from "../../assets/icon_downloadapp.svg";
+import babu88 from "../../assets/hdft/babu88_logo_black.svg";
+import hotBadge from "../../assets/hdft/hot-badge.png";
+import iconPromotion from "../../assets/hdft/icon_promotion.svg";
+import iconReferral from "../../assets/hdft/icon_referral.svg";
+import iconBettingPass from "../../assets/hdft/icon_bettingpass.svg";
+import iconAgents from "../../assets/hdft/icon_agents.svg";
+import iconRng from "../../assets/hdft/icon_rng.svg";
+import iconLd from "../../assets/hdft/icon_ld.svg";
+import iconCrash from "../../assets/hdft/icon_crash.svg";
+import iconCricket from "../../assets/hdft/icon_cricket.svg";
+import iconTable from "../../assets/hdft/icon_table.svg";
+import iconFastGames from "../../assets/hdft/icon_fastgames.svg";
+import iconFishing from "../../assets/hdft/icon_fishing.svg";
+import iconSb from "../../assets/hdft/icon_sb.svg";
+import iconLanguage from "../../assets/hdft/icon_language.svg";
+import iconFaq from "../../assets/hdft/icon_FAQ.svg";
+import iconLiveChat from "../../assets/hdft/liveChat.svg";
+import iconDownloadApp from "../../assets/hdft/icon_downloadapp.svg";
 
 export default function MobileMenu({ isOpen, onClose }) {
   const topMenu = [

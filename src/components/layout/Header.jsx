@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
 import MobileMenu from "./MobileMenu";
-import animation from "../../assets/bb88_logo_animation2.gif";
-import hotBadge from "../../assets/hot-badge.png";
-import inrFlag from "../../assets/INR.svg";
+import animation from "../../assets/hdft/bb88_logo_animation2.gif";
+import hotBadge from "../../assets/hdft/hot-badge.png";
+import inrFlag from "../../assets/hdft/INR.svg";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -63,7 +63,11 @@ export default function Header() {
 
               {/* Right: India flag (mobile) / Actions (desktop) */}
               <button className="lg:hidden flex h-11 items-center gap-3 rounded-full bg-[#d9d9d9] px-4">
-                <img src={inrFlag} alt="INR" className="h-7 w-7 rounded-full object-cover" />
+                <img
+                  src={inrFlag}
+                  alt="INR"
+                  className="h-7 w-7 rounded-full object-cover"
+                />
                 <ChevronDown className="h-5 w-5 text-black/70" />
               </button>
 
@@ -78,7 +82,11 @@ export default function Header() {
                 </button>
 
                 <button className="flex h-11 items-center gap-3 rounded-full bg-[#d9d9d9] px-4">
-                  <img src={inrFlag} alt="INR" className="h-7 w-7 rounded-full object-cover" />
+                  <img
+                    src={inrFlag}
+                    alt="INR"
+                    className="h-7 w-7 rounded-full object-cover"
+                  />
                   <ChevronDown className="h-5 w-5 text-black/70" />
                 </button>
               </div>
