@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import MobileMenu from "./MobileMenu";
 import animation from "../../assets/bb88_logo_animation2.gif";
 import hotBadge from "../../assets/hot-badge.png";
@@ -43,15 +43,32 @@ export default function Header() {
         <div className="bg-white">
           <div className="mx-auto w-full px-4">
             <div className="flex h-18.5 items-center justify-between">
-              {/* Left: logo */}
-              <div className="flex items-center gap-4">
-                <a href="#" className="flex items-center">
-                  <img src={animation} alt="BABU88" className="h-12.5 w-auto" />
-                </a>
-              </div>
+              {/* Left: Menu toggle */}
+              <button
+                className="lg:hidden text-black"
+                onClick={() => setIsMobileMenuOpen((v) => !v)}
+                aria-label="Toggle menu"
+              >
+                <div className="space-y-1">
+                  <div className="h-0.5 w-5 bg-black" />
+                  <div className="h-0.5 w-5 bg-black" />
+                  <div className="h-0.5 w-5 bg-black" />
+                </div>
+              </button>
 
-              {/* Right: actions */}
-              <div className="hidden items-center gap-6 lg:flex">
+              {/* Center: Logo (mobile) / Left: Logo (desktop) */}
+              <a href="#" className="flex items-center lg:absolute lg:left-4">
+                <img src={animation} alt="BABU88" className="h-12.5 w-auto" />
+              </a>
+
+              {/* Right: India flag (mobile) / Actions (desktop) */}
+              <button className="lg:hidden flex h-11 items-center gap-3 rounded-full bg-[#d9d9d9] px-4">
+                <img src={inrFlag} alt="INR" className="h-7 w-7 rounded-full object-cover" />
+                <ChevronDown className="h-5 w-5 text-black/70" />
+              </button>
+
+              {/* Desktop actions */}
+              <div className="hidden lg:flex items-center gap-6 ml-auto">
                 <button className="h-11 min-w-35 rounded-xl bg-[#f2b300] px-8 text-[16px] font-bold text-black">
                   Login
                 </button>
@@ -65,19 +82,6 @@ export default function Header() {
                   <ChevronDown className="h-5 w-5 text-black/70" />
                 </button>
               </div>
-
-              {/* Mobile menu toggle */}
-              <button
-                className="lg:hidden text-black"
-                onClick={() => setIsMobileMenuOpen((v) => !v)}
-                aria-label="Toggle menu"
-              >
-                {isMobileMenuOpen ? (
-                  <X className="h-8 w-8" />
-                ) : (
-                  <Menu className="h-8 w-8" />
-                )}
-              </button>
             </div>
           </div>
         </div>

@@ -14,6 +14,10 @@ import iconTable from "../../assets/icon_table.svg";
 import iconFastGames from "../../assets/icon_fastgames.svg";
 import iconFishing from "../../assets/icon_fishing.svg";
 import iconSb from "../../assets/icon_sb.svg";
+import iconLanguage from "../../assets/icon_language.svg";
+import iconFaq from "../../assets/icon_FAQ.svg";
+import iconLiveChat from "../../assets/liveChat.svg";
+import iconDownloadApp from "../../assets/icon_downloadapp.svg";
 
 export default function MobileMenu({ isOpen, onClose }) {
   const topMenu = [
@@ -44,6 +48,13 @@ export default function MobileMenu({ isOpen, onClose }) {
     { label: "Sportsbook", href: "#sportsbook", icon: iconSb },
   ];
 
+  const others = [
+    { label: "Language", href: "#language", icon: iconLanguage },
+    { label: "FAQ", href: "#faq", icon: iconFaq },
+    { label: "Live Chat", href: "#chat", icon: iconLiveChat },
+    { label: "Download App", href: "#app", icon: iconDownloadApp },
+  ];
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -64,26 +75,25 @@ export default function MobileMenu({ isOpen, onClose }) {
             animate={{ x: 0 }}
             exit={{ x: "-100%" }}
             transition={{ type: "tween", duration: 0.16 }}
-            className="fixed left-0 top-0 bottom-0 z-50 w-[272px] bg-white lg:hidden overflow-y-auto"
+            className="fixed left-0 top-0 bottom-0 z-50 w-68 bg-white lg:hidden overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Right thin border (panel edge) */}
             <div className="absolute right-0 top-0 h-full w-px bg-black/10" />
 
             {/* Header row: logo + hamburger */}
-            <div className="flex items-center justify-between px-1 pt-4">
-              <img src={babu88} alt="BABU88" className="h-9 w-auto" />
+            <div className="flex items-center justify-between px-4 pt-4">
+              <img src={babu88} alt="BABU88" className="h-9 w-85" />
 
               <button
                 aria-label="Close menu"
                 className="p-2 text-black/50"
                 onClick={onClose}
               >
-                {/* hamburger icon (exact look) */}
                 <div className="space-y-1">
-                  <div className="h-[2px] w-5 bg-black/50" />
-                  <div className="h-[2px] w-5 bg-black/50" />
-                  <div className="h-[2px] w-5 bg-black/50" />
+                  <div className="h-0.5 w-5 bg-black/50" />
+                  <div className="h-0.5 w-5 bg-black/50" />
+                  <div className="h-0.5 w-5 bg-black/50" />
                 </div>
               </button>
             </div>
@@ -91,15 +101,15 @@ export default function MobileMenu({ isOpen, onClose }) {
             {/* Divider */}
             <div className="mt-3 h-px w-full bg-black/10" />
 
-            {/* Menu list */}
-            <nav className="pl-0 pr-2 py-2">
+            {/* Top menu */}
+            <nav className="px-2 py-2">
               {topMenu.map((item) => {
                 return (
                   <a
                     key={item.label}
                     href={item.href}
                     onClick={onClose}
-                    className="flex items-center justify-between pl-1 pr-3 py-3"
+                    className="flex items-center justify-between px-3 py-3"
                   >
                     <span className="flex items-center gap-5">
                       <img src={item.icon} alt="" className="h-7 w-7" />
@@ -112,7 +122,7 @@ export default function MobileMenu({ isOpen, onClose }) {
                       <img
                         src={hotBadge}
                         alt="HOT"
-                        className="h-[18px] w-auto animate-[hotPulse_900ms_ease-in-out_infinite]"
+                        className="h-4.5 w-auto animate-[hotPulse_900ms_ease-in-out_infinite]"
                         draggable={false}
                       />
                     )}
@@ -125,19 +135,19 @@ export default function MobileMenu({ isOpen, onClose }) {
             <div className="h-px w-full bg-black/10" />
 
             {/* Games title */}
-            <div className="px-1 pt-4 pb-2 text-[18px] font-bold text-black/30">
+            <div className="px-4 pt-4 pb-2 text-[18px] font-bold text-black/30">
               Games
             </div>
 
             {/* Games list */}
-            <nav className="pl-0 pr-2 pb-6">
+            <nav className="px-2 pb-2">
               {games.map((g) => {
                 return (
                   <a
                     key={g.label}
                     href={g.href}
                     onClick={onClose}
-                    className="flex items-center justify-between pl-1 pr-3 py-3"
+                    className="flex items-center justify-between px-3 py-3"
                   >
                     <span className="flex items-center gap-5">
                       <img src={g.icon} alt="" className="h-7 w-7" />
@@ -147,10 +157,39 @@ export default function MobileMenu({ isOpen, onClose }) {
                     </span>
 
                     {g.isNew && (
-                      <span className="rounded-full bg-[#16a34a] px-2 py-[2px] text-[11px] font-extrabold text-white">
+                      <span className="rounded-full bg-[#16a34a] px-2 py-0.5 text-[11px] font-extrabold text-white">
                         new
                       </span>
                     )}
+                  </a>
+                );
+              })}
+            </nav>
+
+            {/* Divider */}
+            <div className="mt-2 h-px w-full bg-black/10" />
+
+            {/* Others title (like your image7) */}
+            <div className="px-4 pt-4 pb-2 text-[18px] font-bold text-black/30">
+              Others
+            </div>
+
+            {/* Others list */}
+            <nav className="px-2 pb-6">
+              {others.map((o) => {
+                return (
+                  <a
+                    key={o.label}
+                    href={o.href}
+                    onClick={onClose}
+                    className="flex items-center justify-between px-3 py-3"
+                  >
+                    <span className="flex items-center gap-5">
+                      <img src={o.icon} alt="" className="h-7 w-7" />
+                      <span className="text-[14px] font-semibold text-black/35">
+                        {o.label}
+                      </span>
+                    </span>
                   </a>
                 );
               })}
