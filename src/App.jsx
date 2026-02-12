@@ -3,6 +3,7 @@ import Footer from './components/layout/Footer';
 import HeroCarousel from './components/sections/HeroCarousel';
 import StepBanner from './components/sections/StepBanner';
 import HotGames from './components/sections/HotGames';
+import PartnerAndMatches from './components/sections/PartenerAndMatches';
 import ReferralBanner from './components/sections/ReferralBanner';
 import Ambassadors from './components/sections/Ambassadors';
 import Sponsorships from './components/sections/Sponsorships';
@@ -15,6 +16,7 @@ function App() {
         <HeroCarousel />
         <StepBanner />
         <HotGames />
+        <PartnerAndMatches />
         <ReferralBanner />
         <Ambassadors />
         <Sponsorships />
