@@ -1,82 +1,168 @@
-import { motion, AnimatePresence } from 'framer-motion';
-import { User, MessageCircle } from 'lucide-react';
-import Button from '../ui/Button';
+import { AnimatePresence, motion } from "framer-motion";
 
-export default function MobileMenu({ isOpen, onClose, navItems }) {
+import babu88 from "../../assets/babu88_logo_black.svg";
+import hotBadge from "../../assets/hot-badge.png";
+import iconPromotion from "../../assets/icon_promotion.svg";
+import iconReferral from "../../assets/icon_referral.svg";
+import iconBettingPass from "../../assets/icon_bettingpass.svg";
+import iconAgents from "../../assets/icon_agents.svg";
+import iconRng from "../../assets/icon_rng.svg";
+import iconLd from "../../assets/icon_ld.svg";
+import iconCrash from "../../assets/icon_crash.svg";
+import iconCricket from "../../assets/icon_cricket.svg";
+import iconTable from "../../assets/icon_table.svg";
+import iconFastGames from "../../assets/icon_fastgames.svg";
+import iconFishing from "../../assets/icon_fishing.svg";
+import iconSb from "../../assets/icon_sb.svg";
+
+export default function MobileMenu({ isOpen, onClose }) {
+  const topMenu = [
+    { label: "Promotion", href: "#promotion", icon: iconPromotion },
+    {
+      label: "Refer and Earn",
+      href: "#referral",
+      icon: iconReferral,
+      hot: true,
+    },
+    {
+      label: "Betting Pass",
+      href: "#betting-pass",
+      icon: iconBettingPass,
+      hot: true,
+    },
+    { label: "Agent Affiliate", href: "#agent", icon: iconAgents },
+  ];
+
+  const games = [
+    { label: "Slot games", href: "#slot", icon: iconRng },
+    { label: "Live casino", href: "#live-casino", icon: iconLd },
+    { label: "Crash", href: "#crash", icon: iconCrash },
+    { label: "Cricket", href: "#cricket", icon: iconCricket },
+    { label: "Table Games", href: "#table-games", icon: iconTable },
+    { label: "Fast", href: "#fast", icon: iconFastGames, isNew: true },
+    { label: "Fishing", href: "#fishing", icon: iconFishing },
+    { label: "Sportsbook", href: "#sportsbook", icon: iconSb },
+  ];
+
   return (
     <AnimatePresence>
       {isOpen && (
         <>
-          {/* Backdrop */}
+          {/* Tap outside to close (no dark overlay, like screenshot) */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 bg-black/60 z-40 lg:hidden"
+            transition={{ duration: 0.12 }}
+            className="fixed inset-0 z-40 lg:hidden bg-transparent"
             onClick={onClose}
           />
-          
-          {/* Menu Panel */}
-          <motion.div
-            initial={{ x: '100%' }}
+
+          {/* Left drawer */}
+          <motion.aside
+            initial={{ x: "-100%" }}
             animate={{ x: 0 }}
-            exit={{ x: '100%' }}
-            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed top-0 right-0 bottom-0 w-80 bg-(--color-background-secondary) z-50 lg:hidden overflow-y-auto"
+            exit={{ x: "-100%" }}
+            transition={{ type: "tween", duration: 0.16 }}
+            className="fixed left-0 top-0 bottom-0 z-50 w-[272px] bg-white lg:hidden overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
           >
-            <div className="p-6">
-              {/* User Actions */}
-              <div className="flex flex-col gap-3 mb-8">
-                <Button variant="secondary" size="md" className="w-full">
-                  <User style={{ width: '20px', height: '20px', marginRight: '0.5rem' }} />
-                  Login
-                </Button>
-                <Button variant="primary" size="md" className="w-full">
-                  Join Now
-                </Button>
-              </div>
-              
-              {/* Navigation */}
-              <nav className="flex flex-col gap-1 mb-8">
-                <div className="text-(--color-text-secondary) text-xs uppercase font-semibold mb-3 px-4">
-                  Main Menu
+            {/* Right thin border (panel edge) */}
+            <div className="absolute right-0 top-0 h-full w-px bg-black/10" />
+
+            {/* Header row: logo + hamburger */}
+            <div className="flex items-center justify-between px-1 pt-4">
+              <img src={babu88} alt="BABU88" className="h-9 w-auto" />
+
+              <button
+                aria-label="Close menu"
+                className="p-2 text-black/50"
+                onClick={onClose}
+              >
+                {/* hamburger icon (exact look) */}
+                <div className="space-y-1">
+                  <div className="h-[2px] w-5 bg-black/50" />
+                  <div className="h-[2px] w-5 bg-black/50" />
+                  <div className="h-[2px] w-5 bg-black/50" />
                 </div>
-                {navItems.map((item) => (
+              </button>
+            </div>
+
+            {/* Divider */}
+            <div className="mt-3 h-px w-full bg-black/10" />
+
+            {/* Menu list */}
+            <nav className="pl-0 pr-2 py-2">
+              {topMenu.map((item) => {
+                return (
                   <a
                     key={item.label}
                     href={item.href}
-                    className="flex items-center justify-between px-4 py-3 text-(--color-text) hover:bg-(--color-card) rounded-sm transition-colors"
                     onClick={onClose}
+                    className="flex items-center justify-between pl-1 pr-3 py-3"
                   >
-                    <span className="font-medium">{item.label}</span>
-                    {item.badge && (
-                      <span className="bg-(--color-accent) text-(--color-text) text-xs px-2 py-0.5 rounded-sm">
-                        {item.badge}
+                    <span className="flex items-center gap-5">
+                      <img src={item.icon} alt="" className="h-7 w-7" />
+                      <span className="text-[14px] font-semibold text-black/35">
+                        {item.label}
+                      </span>
+                    </span>
+
+                    {item.hot && (
+                      <img
+                        src={hotBadge}
+                        alt="HOT"
+                        className="h-[18px] w-auto animate-[hotPulse_900ms_ease-in-out_infinite]"
+                        draggable={false}
+                      />
+                    )}
+                  </a>
+                );
+              })}
+            </nav>
+
+            {/* Divider */}
+            <div className="h-px w-full bg-black/10" />
+
+            {/* Games title */}
+            <div className="px-1 pt-4 pb-2 text-[18px] font-bold text-black/30">
+              Games
+            </div>
+
+            {/* Games list */}
+            <nav className="pl-0 pr-2 pb-6">
+              {games.map((g) => {
+                return (
+                  <a
+                    key={g.label}
+                    href={g.href}
+                    onClick={onClose}
+                    className="flex items-center justify-between pl-1 pr-3 py-3"
+                  >
+                    <span className="flex items-center gap-5">
+                      <img src={g.icon} alt="" className="h-7 w-7" />
+                      <span className="text-[14px] font-semibold text-black/35 capitalize">
+                        {g.label}
+                      </span>
+                    </span>
+
+                    {g.isNew && (
+                      <span className="rounded-full bg-[#16a34a] px-2 py-[2px] text-[11px] font-extrabold text-white">
+                        new
                       </span>
                     )}
                   </a>
-                ))}
-              </nav>
-              
-              {/* Additional Links */}
-              <div className="flex flex-col gap-1 pt-6 border-t border-(--color-border)">
-                <div className="text-(--color-text-secondary) text-xs uppercase font-semibold mb-3 px-4">
-                  Others
-                </div>
-                <a href="#faq" className="px-4 py-3 text-(--color-text) hover:bg-(--color-card) rounded-sm transition-colors" onClick={onClose}>
-                  FAQ
-                </a>
-                <a href="#chat" className="flex items-center gap-2 px-4 py-3 text-(--color-text) hover:bg-(--color-card) rounded-sm transition-colors" onClick={onClose}>
-                  <MessageCircle style={{ width: '18px', height: '18px' }} />
-                  Live Chat
-                </a>
-                <a href="#app" className="px-4 py-3 text-(--color-text) hover:bg-(--color-card) rounded-sm transition-colors" onClick={onClose}>
-                  Download App
-                </a>
-              </div>
-            </div>
-          </motion.div>
+                );
+              })}
+            </nav>
+
+            <style>{`
+              @keyframes hotPulse {
+                0%, 100% { transform: scale(1); }
+                50% { transform: scale(1.18); }
+              }
+            `}</style>
+          </motion.aside>
         </>
       )}
     </AnimatePresence>
