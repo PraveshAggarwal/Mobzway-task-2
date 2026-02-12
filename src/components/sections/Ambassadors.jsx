@@ -17,30 +17,30 @@ export default function Ambassadors() {
   ];
   
   return (
-    <section className="py-16 bg-[var(--color-background)]">
+    <section className="py-16 bg-(--color-background)">
       <div className="container-custom">
-        <h2 className="text-[var(--color-primary)] text-3xl font-bold mb-8">
+        <h2 className="text-(--color-primary) text-3xl font-bold mb-8">
           Brand Ambassadors
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {ambassadors.map((ambassador) => (
             <Card key={ambassador.id} hover>
-              <div className="relative overflow-hidden aspect-[3/4] group">
+              <div className="relative overflow-hidden aspect-3/4 group">
                 <img
                   src={ambassador.image}
                   alt={ambassador.name}
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/30 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <div className="text-[var(--color-primary)] text-sm font-semibold mb-2">
+                  <div className="text-(--color-primary) text-sm font-semibold mb-2">
                     OFFICIAL BRAND AMBASSADOR
                   </div>
-                  <h3 className="text-[var(--color-text)] text-2xl font-bold mb-1">
+                  <h3 className="text-(--color-text) text-2xl font-bold mb-1">
                     {ambassador.name}
                   </h3>
-                  <div className="text-[var(--color-text-secondary)] text-sm">
+                  <div className="text-(--color-text-secondary) text-sm">
                     {ambassador.year}
                   </div>
                 </div>
