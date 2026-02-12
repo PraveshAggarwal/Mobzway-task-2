@@ -1,5 +1,4 @@
 import { Play } from "lucide-react";
-import Button from "../ui/Button";
 
 import hotBadge from "../../assets/hdft/hot-badge.png";
 import game1 from "../../assets/hotgames/124_0.jpg";
