@@ -46,13 +46,13 @@ export default function HeroCarousel() {
 
   return (
     <section>
-      <div className="relative w-full overflow-hidden bg-black">
+      <div className="relative w-full overflow-hidden rounded-none bg-black">
         <div className="overflow-hidden" ref={emblaRef}>
           <div className="flex">
             {slides.map((s, index) => (
               <div key={index} className="flex-[0_0_100%] min-w-0">
                 {/* Banner (image only) */}
-                <div className="relative h-55 sm:h-70 lg:h-90">
+                <div className="relative h-80 sm:h-96 lg:h-120">
                   <img
                     src={s.image}
                     alt={s.alt}

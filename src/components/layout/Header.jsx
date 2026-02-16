@@ -36,6 +36,7 @@ export default function Header() {
         className={[
           "fixed left-0 right-0 top-0 z-50",
           "transition-shadow duration-200",
+          "border-b border-y-background-secondary lg:border-b-0 shadow-xl",
           isScrolled ? "shadow-md" : "",
         ].join(" ")}
       >
@@ -142,7 +143,7 @@ export default function Header() {
       </header>
 
       {/* Spacer so content doesn't hide behind fixed header */}
-      <div className="h-32.5" />
+      <div className="h-40" />
 
       {/* Mobile Menu */}
       <MobileMenu
